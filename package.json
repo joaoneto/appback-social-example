@@ -1,0 +1,43 @@
+{
+  "name": "appback-social-example",
+  "description": "Appback social plugin example",
+  "version": "0.1.0",
+  "type": "app",
+  "main": "index.js",
+  "dependencies": {
+    "hapi": "^8.4.0",
+    "hoodie": "^2.0.4",
+    "hoodie-plugin-appconfig": "^2.0.1",
+    "hoodie-plugin-social": "master",
+    "hoodie-plugin-users": "^2.2.2",
+    "hoodie-server": "^3.1.1"
+  },
+  "files": [
+    "www/"
+  ],
+  "engines": {
+    "node": ">=0.10.35"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "install": "bower install",
+    "start": "hoodie start",
+    "test": "echo NO TESTS exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joaopintoneto/appback-social-example.git"
+  },
+  "hoodie": {
+    "plugins": [
+      "hoodie-plugin-appconfig",
+      "hoodie-plugin-social"
+    ],
+    "hoodiejs": "node_modules/hoodie/src/hoodie.js"
+  },
+  "author": "João Pinto Neto <joaopintoneto@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/joaoneto/appback-social-example/issues"
+  },
+  "homepage": "https://github.com/joaoneto/appback-social-example"
+}
