@@ -1,31 +1,19 @@
 var hoodie = new Hoodie();
 
-document.getElementById('facebook-signin').addEventListener('click', function (e) {
-  console.log(e);
+(function () {
+  var options = {
+    roles: ['email', 'public_profile', 'user_friends']
+  };
 
-  var options = {};
+  $('[data-social-signin]').on('click', function () {
+    var provider = $(this).data('socialSignin');
 
-  hoodie.account.socialLogin('facebook', options)
-    .done(function (data) {
-      console.log(data);
-    })
-    .fail(function (err) {
-      console.log(err);
-    });
-
-}, true);
-
-document.getElementById('google-signin').addEventListener('click', function (e) {
-  console.log(e);
-
-  var options = {};
-
-  hoodie.account.socialLogin('google', options)
-    .done(function (data) {
-      console.log(data);
-    })
-    .fail(function (err) {
-      console.log(err);
-    });
-
-}, true);
+    hoodie.account.socialLogin(provider, options)
+      .done(function (data) {
+        console.log(data);
+      })
+      .fail(function (err) {
+        console.log(err);
+      });
+  });
+})();
